@@ -1,0 +1,1 @@
+proyecto.logic.CaracteristicasVer
