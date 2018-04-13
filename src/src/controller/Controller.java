@@ -39,38 +39,46 @@ public class Controller {
 
 	public void crearProductos(String nombre, String logo, String descripcion, String formato,
 			CaracteristicasVer caracteristicaVer) {
-		
+
 		try {
-			Productos produ=new Producto(nombre, logo, descripcion, formato, caracteristicaVer);
+			Productos produ = new Producto(nombre, logo, descripcion, formato, caracteristicaVer);
 			cn.insertProducto(produ);
-			
+
 		} catch (Exception ex) {
-			// TODO: handle exception
+			Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		
-	}
-	
-	 public void crearTarea(String tipo, String codigo, String descripcion, String
-			 estado, String responsable) {
-				 
-				 try {
-					Tarea tarea=new Tarea( codigo, descripcion, estado);
-					cn.insertTareas(tarea);
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-			 cl.crearTarea(tipo, codigo, descripcion, estado, responsable);
-			
-			 }
 
-	/*public void crearVersion(String formato, CaracteristicasVer caracteristicaVer) {
-		cl.crearVersion(formato, caracteristicaVer);
 	}
 
-	public void crearError(String descripcion, String fechaReporte) {
-		cl.crearError(descripcion, fechaReporte);
+	public void crearTarea(String tipo, String codigo, String descripcion, String estado, String responsable) {
 
-	}*/
+		try {
+			Tarea tarea = new Tarea(codigo, descripcion, estado);
+			cn.insertTareas(tarea);
+		} catch (Exception e) {
+			Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+		}
+
+	}
+
+	public void crearVersion(String formato, CaracteristicasVer caracteristicaVer) {
+
+		try {
+
+			Version version = new Version(formato);
+			cn.insertVersion(version);
+
+		} catch (Exception e) {
+			Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
+
+	/*
+	 * public void crearError(String descripcion, String fechaReporte) {
+	 * cl.crearError(descripcion, fechaReporte);
+	 * 
+	 * }
+	 */
 
 	// public void crearMejora(String descripcion) {
 	// cl.crearMejora(descripcion);
@@ -82,7 +90,7 @@ public class Controller {
 	// cl.crearInstalacion(estado, fecha, hora, cliente, producto, version, tarea);
 	// }
 	//
-	
+
 	//
 	// public String[] getCliente() {
 	// return cl.listClientes();
