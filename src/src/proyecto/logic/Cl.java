@@ -55,7 +55,9 @@ public class Cl {
 
 	public void crearInstalacion(String estado, String fecha, String hora, Empresa empresa, Productos producto,
 			Version version, Tarea tarea) {
-
+		Empresa miEmpresa=new Empresa(String razonSocial, String cedulaJuridica, String ubicacion, String direccion, String logo,
+				String telefono);
+		clientes.add(miEmpresa);
 		Instalacion miInstalacion = new Instalacion(estado, fecha, hora, empresa, producto, version, tarea);
 		instalacion.add(miInstalacion);
 	}
