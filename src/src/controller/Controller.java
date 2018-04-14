@@ -1,4 +1,4 @@
-package src.controller;
+ppackage src.controller;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,6 +73,9 @@ public class Controller {
 		}
 	}
 
+	
+	//seguir con esto pero apuntando a los multi
+	
 	/*
 	 * public void crearError(String descripcion, String fechaReporte) {
 	 * cl.crearError(descripcion, fechaReporte);
