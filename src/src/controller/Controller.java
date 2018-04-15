@@ -74,15 +74,17 @@ public class Controller {
 	}
 
 	
-	//seguir con esto pero apuntando a los multi
 	
-	/*
-	 * public void crearError(String descripcion, String fechaReporte) {
-	 * cl.crearError(descripcion, fechaReporte);
-	 * 
-	 * }
-	 */
-
+	 public void crearError(String descripcion, String fechaReporte) {
+	  cl.crearError(descripcion, fechaReporte);
+	  
+	  try {
+		  Error error= new Error(descripcion,fechaReporte);
+		cn.insertError(error);
+	} catch (Exception e) {
+		Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+	}
+	 }
 	// public void crearMejora(String descripcion) {
 	// cl.crearMejora(descripcion);
 	// }

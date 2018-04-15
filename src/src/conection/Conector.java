@@ -1,4 +1,4 @@
-package src.conection;
+-package src.conection;
 
 import java.io.IOException;
 import src.proyecto.logic.*;
